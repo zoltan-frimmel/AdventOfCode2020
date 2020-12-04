@@ -20,5 +20,11 @@ namespace AdventOfCode2020
                 } while (true);
             }
         }
+
+        public static string GetAll(string fn)
+        {
+            using (var reader = new StreamReader(File.OpenRead(fn)))
+                return reader.ReadToEnd();
+        }
     }
 }
