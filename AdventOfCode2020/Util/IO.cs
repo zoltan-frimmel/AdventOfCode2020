@@ -1,10 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace AdventOfCode2020
 {
     public static class IO
     {
+        public static long[] GetLongs(string fn)
+        {
+            return GetLines(fn)
+                .Where(s => s != "")
+                .Select(s => long.Parse(s))
+                .ToArray();
+        }
+
         public static IEnumerable<string> GetLines(string fn)
         {
             using (var reader = new StreamReader(File.OpenRead(fn)))
