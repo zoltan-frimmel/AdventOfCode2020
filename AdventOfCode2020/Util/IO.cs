@@ -6,11 +6,20 @@ namespace AdventOfCode2020
 {
     public static class IO
     {
+
+        public static int[] GetInts(string fn)
+        {
+            return GetLines(fn)
+                .Where(s => s != "")
+                .Select(int.Parse)
+                .ToArray();
+        }
+
         public static long[] GetLongs(string fn)
         {
             return GetLines(fn)
                 .Where(s => s != "")
-                .Select(s => long.Parse(s))
+                .Select(long.Parse)
                 .ToArray();
         }
 
